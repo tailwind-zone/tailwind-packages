@@ -4,11 +4,14 @@
   "main": "dist/index.js",
   "types": "dist.index.d.ts",
   "scripts": {
+    "build": "tsc"
   },
   "author": "baoskee",
   "license": "ISC",
   "description": "Simple vanilla JS wallet connect for Tailwind wallet.",
   "devDependencies": {
+    "@keplr-wallet/types": "^0.12.63",
+    "@types/long": "^5.0.0",
     "typescript": "^5.3.3"
   }
 }
