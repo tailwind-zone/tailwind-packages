@@ -5,6 +5,7 @@
   "types": "dist.index.d.ts",
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rf dist && rm -rf node_modules",
     "preinstall": "npx only-allow pnpm"
   },
   "author": "baoskee",
