@@ -9,9 +9,9 @@ See full developer documentation at [developer.tailwind.zone](https://docs.tailw
 # Getting Started
 ```bash
 # install dependencies
-yarn
+pnpm install
 # Typescript transpile 
-yarn build
+pnpm build
 ```
 
 # Using the library
