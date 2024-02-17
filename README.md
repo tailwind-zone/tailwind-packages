@@ -51,5 +51,9 @@ wallet.signing.getOfflineSigner();
 const { pubkey, visibleChains } = wallet.accounts.active();
 
 const account = wallet.accounts.active();
+// in order for this package not to be bloated
+// the bech32 prefix has to be requested through the wallet,
+// else we have to install chain-registry... maybe 
+// tree-shaking can help?
 const cosmoshubAddr = account.addr("cosmoshub");
 ```
