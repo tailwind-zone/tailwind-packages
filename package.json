@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "types": "dist.index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "preinstall": "npx only-allow pnpm"
   },
   "author": "baoskee",
   "license": "ISC",
@@ -13,5 +14,6 @@
     "@keplr-wallet/types": "^0.12.63",
     "@types/long": "^5.0.0",
     "typescript": "^5.3.3"
-  }
+  },
+  "packageManager": "pnpm@8.15.1"
 }
