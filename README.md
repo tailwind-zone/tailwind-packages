@@ -38,3 +38,18 @@ const res = await client.signAndBroadcast(
 );
 
 ```
+
+
+```typescript
+import { connect, useWallet } from "@tailwindzone/connect"
+
+const wallet = await connect();
+// because CosmJS is the standard for client-side   
+wallet.signing.getOfflineSigner();
+
+// { address, } 
+const { pubkey, visibleChains } = wallet.accounts.active();
+
+const account = wallet.accounts.active();
+const cosmoshubAddr = account.addr("cosmoshub");
+```
