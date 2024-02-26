@@ -3,7 +3,7 @@
 Tailwind Connect is a wallet connection library for 
 [Tailwind wallet](https://tailwind.zone/). 
 
-See full developer documentation at [developer.tailwind.zone](https://docs.tailwind.zone/).
+See full developer documentation at [developer.tailwind.zone](https://developer.tailwind.zone/introduction#integrate-in-under-5-minutes).
 
 
 # Getting Started
