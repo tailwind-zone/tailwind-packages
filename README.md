@@ -18,42 +18,15 @@ pnpm build
 You can use Tailwind with its own interface or existing Keplr-compatible interface.
 
 ```typescript
-import { getWallet, getWalletKeplr } from "@tailwindzone/connect"
+import { wallet, keplr } from "@tailwindzone/connect"
 
-const wallet = await getWallet();
-const signer = await wallet.getOfflineSigner("osmosis-1");
-
-const [account] = await signer.getAccounts();
-
-// using CosmJS, see https://github.com/cosmos/cosmjs 
-const client = await SigningStargateClient.connectWithSigner(
-  "https://rpc.testnet.osmosis.network",
-  signer
-);
-const res = await client.signAndBroadcast(
-  account.address,
-  [msg],
-  fee,
-  memo
-);
-
-```
-
-
-```typescript
-import { connect, useWallet } from "@tailwindzone/connect"
-
-const wallet = await connect();
 // because CosmJS is the standard for client-side   
-wallet.signing.getOfflineSigner();
+const signer = await wallet.signing.getOfflineSigner("osmosis-1");
 
-// { address, } 
-const { pubkey, visibleChains } = wallet.accounts.active();
-
-const account = wallet.accounts.active();
-// in order for this package not to be bloated
-// the bech32 prefix has to be requested through the wallet,
-// else we have to install chain-registry... maybe 
-// tree-shaking can help?
-const cosmoshubAddr = account.addr("cosmoshub");
+const account = await wallet.accounts.active();
+// account.pubkey
+// account.visibleChains 
+// account.addr("cosmoshub") -> cosmoshub address 
+const cosmoshubAddr = await account.addr("cosmoshub");
+const { pubkey, visibleChains, addr } = await wallet.accounts.active();
 ```
