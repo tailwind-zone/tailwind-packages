@@ -13,7 +13,7 @@
   "description": "Simple vanilla JS wallet connect for Tailwind wallet.",
   "devDependencies": {
     "@keplr-wallet/types": "^0.12.63",
-    "@types/long": "^5.0.0",
+    "@types/long": "4.0.2",
     "typescript": "^5.3.3"
   },
   "packageManager": "pnpm@8.15.1"
