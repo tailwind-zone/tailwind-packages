@@ -1,0 +1,20 @@
+{
+  "name": "@tailwindzone/connect",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "types": "dist.index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist && rm -rf node_modules",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "author": "baoskee",
+  "license": "ISC",
+  "description": "Simple vanilla JS wallet connect for Tailwind wallet.",
+  "devDependencies": {
+    "@keplr-wallet/types": "^0.12.63",
+    "@types/long": "4.0.2",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@8.15.1"
+}
