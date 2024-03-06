@@ -1,20 +1,24 @@
 {
-  "name": "@tailwindzone/connect",
-  "version": "1.1.0",
-  "main": "dist/index.js",
-  "types": "dist.index.d.ts",
+  "name": "tailwind-connect-turborepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "build": "tsc",
-    "clean": "rm -rf dist && rm -rf node_modules",
+    "build": "dotenv -- turbo build",
+    "dev": "dotenv -- turbo dev",
+    "format": "turbo run format",
+    "lint": "turbo run lint",
+    "storybook": "turbo run storybook",
+    "test": "turbo run test -- --runInBand",
+    "clean": "rm -rf node_modules && turbo run clean",
     "preinstall": "npx only-allow pnpm"
   },
-  "author": "baoskee",
-  "license": "ISC",
-  "description": "Simple vanilla JS wallet connect for Tailwind wallet.",
   "devDependencies": {
-    "@keplr-wallet/types": "^0.12.63",
-    "@types/long": "4.0.2",
-    "typescript": "^5.3.3"
+    "@turbo/gen": "^1.9.7",
+    "dotenv-cli": "latest",
+    "turbo": "^1.10.13"
   },
   "packageManager": "pnpm@8.15.1"
 }
