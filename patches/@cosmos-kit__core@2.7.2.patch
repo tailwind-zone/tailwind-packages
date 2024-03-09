@@ -1,0 +1,13 @@
+diff --git a/cjs/types/hook.d.ts b/cjs/types/hook.d.ts
+index 9e0f783043f197144fea4aa05b2f73cd5bf0c2f6..b1f4f757ae275a3e867b6066369b73992515fec0 100644
+--- a/cjs/types/hook.d.ts
++++ b/cjs/types/hook.d.ts
+@@ -56,7 +56,7 @@ export interface ChainWalletContext {
+     sendTx(tx: Uint8Array, mode: BroadcastMode): Promise<Uint8Array>;
+ }
+ export interface ChainContext extends ChainWalletContext {
+-    wallet: Wallet | undefined;
++    wallet: Wallet;
+     walletRepo: WalletRepo;
+     openView: () => void;
+     closeView: () => void;

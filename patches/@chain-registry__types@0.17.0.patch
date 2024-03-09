@@ -1,0 +1,16 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+deleted file mode 100644
+index c2b24d172d2a562ae9a01300fdb0114704a9265c..0000000000000000000000000000000000000000
+diff --git a/types/chains.d.ts b/types/chains.d.ts
+index de1652310fc6665af2e27d373265b47b47bcc0a7..09f6c4704ad3c221ac8b27c636dfe9d15b6322e2 100644
+--- a/types/chains.d.ts
++++ b/types/chains.d.ts
+@@ -213,7 +213,7 @@ export interface Chain {
+             address: string;
+             provider?: string;
+             archive?: boolean;
+-        }[];
++        }[] | undefined;
+     };
+ }
+ export type Chains = Chain[];

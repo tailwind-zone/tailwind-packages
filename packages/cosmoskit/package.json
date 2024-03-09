@@ -54,10 +54,14 @@
     ]
   },
   "dependencies": {
-    "@cosmos-kit/core": "^2.8.9"
+    "@cosmos-kit/core": "2.7.2",
+    "chain-registry": "^1.29.0"
   },
   "devDependencies": {
-    "@cosmjs/proto-signing": "^0.32.2",
-    "@tailwindzone/connect": "^1.1.0"
+    "@cosmjs/proto-signing": "0.29.0",
+    "@cosmos-kit/react": "^2.10.11",
+    "@tailwindzone/connect": "^1.1.0",
+    "@types/react": "^18.2.64",
+    "typescript": "^5.3.3"
   }
 }

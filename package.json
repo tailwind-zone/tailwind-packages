@@ -21,5 +21,11 @@
     "dotenv-cli": "latest",
     "turbo": "^1.10.13"
   },
-  "packageManager": "pnpm@8.15.1"
+  "packageManager": "pnpm@8.15.1",
+  "pnpm": {
+    "patchedDependencies": {
+      "@cosmos-kit/core@2.7.2": "patches/@cosmos-kit__core@2.7.2.patch",
+      "@chain-registry/types@0.17.0": "patches/@chain-registry__types@0.17.0.patch"
+    }
+  }
 }
