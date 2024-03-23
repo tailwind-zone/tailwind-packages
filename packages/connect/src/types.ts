@@ -1,3 +1,18 @@
+export type TailwindSignOptions = {
+  // funds required for tx you want to sign
+  readonly fundsRequired?: Array<{
+    readonly token: { denom: string; chain: string };
+    readonly amount: string;
+  }>;
+  readonly dstChain: string;
+  // gas estimation for tx you want to sign
+  readonly maxGas?: number;
+  // defaults to direct
+  readonly signMode?: "amino" | "direct";
+};
+
+// MARK: Old types 
+
 export type Coin = {
   readonly denom: string;
   readonly amount: string;
