@@ -18,15 +18,43 @@ pnpm build
 You can use Tailwind with its own interface or existing Keplr-compatible interface.
 
 ```typescript
-import { wallet, keplr } from "@tailwindzone/connect"
+import { connect } from "@tailwindzone/connect"
+
+export type TailwindSignOptions = {
+  // funds required for tx you want to sign
+  readonly fundsRequired?: Array<{
+    readonly token: { denom: string; chain: string };
+    readonly amount: string;
+  }>;
+  readonly dstChain: string;
+  // gas estimation for tx you want to sign
+  readonly maxGas?: number;
+  // defaults to direct
+  readonly signMode?: "amino" | "direct";
+};
 
 // because CosmJS is the standard for client-side   
-const signer = await wallet.signing.getOfflineSigner("osmosis-1");
+const wallet = await connect();
+const signer = await wallet.getOfflineSigner("osmosis-1", {
+  fundsRequired: [{
+    token: { denom: "uosmo", chain: "osmosis-1" },
+    amount: "1000000",
+  }],
+  dstChain: "osmosis-1"
+  maxGas: 200_000,
+  signMode: "direct"
+});
 
-const account = await wallet.accounts.active();
-// account.pubkey
-// account.visibleChains 
-// account.addr("cosmoshub") -> cosmoshub address 
-const cosmoshubAddr = await account.addr("cosmoshub");
-const { pubkey, visibleChains, addr } = await wallet.accounts.active();
+// Sign tranasction
+const [account] = await signer.getAccounts();
+const client = await SigningStargateClient.connectWithSigner(
+  OSMO_RPC_URL,
+  signer
+);
+const res = await client.signAndBroadcast(
+  account.address,
+  [msg],
+  fee,
+  memo
+);
 ```
