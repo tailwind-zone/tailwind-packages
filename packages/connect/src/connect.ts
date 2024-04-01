@@ -18,41 +18,19 @@ export type TailwindKeplrSubset = Pick<
 >;
 
 export type TailwindWallet = {
-  getOfflineSigner: (
+  readonly getOfflineSigner: (
     chainId: string,
     options?: TailwindSignOptions
   ) => Promise<TailwindOfflineSigner>,
+  readonly keplr: TailwindKeplrSubset,
 };
 
 type TailwindDecoratedWindow = {
   readonly tailwind: TailwindWallet;
-  readonly tailwind_keplr: TailwindKeplrSubset;
 }
 
 declare global {
   interface Window extends TailwindDecoratedWindow {}
-}
-
-export const connectWithKeplrApi = async (): Promise<TailwindKeplrSubset> => {
-  if (typeof window === "undefined")
-    throw new Error("window is not defined");
-
-  if (window.tailwind_keplr || document.readyState === "complete")
-    return window.tailwind_keplr;
-
-  return new Promise((resolve) => {
-    const documentStateChange = (event: Event) => {
-      if (
-        event.target &&
-        (event.target as Document).readyState === "complete"
-      ) {
-        resolve(window.tailwind_keplr);
-        document.removeEventListener("readystatechange", documentStateChange);
-      }
-    };
-
-    document.addEventListener("readystatechange", documentStateChange);
-  });
 }
 
 export const connect = async (): Promise<TailwindWallet> => {
