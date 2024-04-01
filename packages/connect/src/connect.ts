@@ -33,9 +33,9 @@ declare global {
   interface Window extends TailwindDecoratedWindow {}
 }
 
-export const connectWithKeplrApi = async (): Promise<TailwindKeplrSubset | undefined> => {
+export const connectWithKeplrApi = async (): Promise<TailwindKeplrSubset> => {
   if (typeof window === "undefined")
-    return undefined;
+    throw new Error("window is not defined");
 
   if (window.tailwind_keplr || document.readyState === "complete")
     return window.tailwind_keplr;
@@ -55,9 +55,9 @@ export const connectWithKeplrApi = async (): Promise<TailwindKeplrSubset | undef
   });
 }
 
-export const connect = async (): Promise<TailwindWallet | undefined> => {
+export const connect = async (): Promise<TailwindWallet> => {
   if (typeof window === "undefined")
-    return undefined;
+    throw new Error("window is not defined");
 
   if (window.tailwind || document.readyState === "complete")
     return window.tailwind;
