@@ -33,10 +33,7 @@ declare global {
   interface Window extends TailwindDecoratedWindow {}
 }
 
-/**
- * @wip
- */
-export const connectWithKeplrApi = async (): Promise<any | undefined> => {
+export const connectWithKeplrApi = async (): Promise<TailwindKeplrSubset | undefined> => {
   if (typeof window === "undefined")
     return undefined;
 
@@ -58,10 +55,6 @@ export const connectWithKeplrApi = async (): Promise<any | undefined> => {
   });
 }
 
-/**
- * @wip Still deciding whether we should use Keplr API or not in
- * the connect function. 
- */
 export const connect = async (): Promise<TailwindWallet | undefined> => {
   if (typeof window === "undefined")
     return undefined;
