@@ -1,14 +1,20 @@
+
 export type TailwindSignOptions = {
-  // funds required for tx you want to sign
-  readonly fundsRequired?: Array<{
-    readonly token: { denom: string; chain: string };
-    readonly amount: string;
-  }>;
-  readonly dstChain: string;
   // gas estimation for tx you want to sign
   readonly maxGas?: number;
   // defaults to direct
   readonly signMode?: "amino" | "direct";
+} |
+// Funds required for tx you want to sign
+{
+  readonly maxGas?: number;
+  readonly signMode?: "amino" | "direct";
+  // funds required for tx you want to sign
+  readonly fundsRequired: Array<{
+    readonly token: { denom: string; chain: string };
+    readonly amount: string;
+  }>;
+  readonly dstChain: string;
 };
 
 // MARK: Old types 
