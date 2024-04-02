@@ -35,12 +35,11 @@ export type TailwindSignOptions = {
 
 // because CosmJS is the standard for client-side   
 const wallet = await connect();
-const signer = await wallet.getOfflineSigner("osmosis-1", {
+const signer = wallet.getOfflineSigner("osmosis-1", {
   fundsRequired: [{
     token: { denom: "uosmo", chain: "osmosis-1" },
     amount: "1000000",
   }],
-  dstChain: "osmosis-1"
   maxGas: 200_000,
   signMode: "direct"
 });
