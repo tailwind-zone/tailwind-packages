@@ -4,17 +4,11 @@ export type TailwindSignOptions = {
   readonly maxGas?: number;
   // defaults to direct
   readonly signMode?: "amino" | "direct";
-} |
-// Funds required for tx you want to sign
-{
-  readonly maxGas?: number;
-  readonly signMode?: "amino" | "direct";
   // funds required for tx you want to sign
   readonly fundsRequired: Array<{
     readonly token: { denom: string; chain: string };
     readonly amount: string;
   }>;
-  readonly dstChain: string;
 };
 
 // MARK: Old types 
@@ -92,7 +86,6 @@ export interface OfflineAminoSigner {
   readonly signAmino: (signerAddress: string, signDoc: StdSignDoc) => Promise<AminoSignResponse>;
 }
 
-
 export interface SignDoc {
   /**
    * body_bytes is protobuf serialization of a TxBody that matches the
@@ -113,7 +106,7 @@ export interface SignDoc {
   /** account_number is the account number of the account in state */
   accountNumber: bigint;
 }
-
+ 
 export interface DirectSignResponse {
   /**
    * The sign doc that was signed.
