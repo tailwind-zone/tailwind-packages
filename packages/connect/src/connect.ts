@@ -21,7 +21,7 @@ export type TailwindWallet = {
   readonly getOfflineSigner: (
     chainId: string,
     options?: TailwindSignOptions
-  ) => Promise<TailwindOfflineSigner>,
+  ) => TailwindOfflineSigner,
   readonly keplr: TailwindKeplrSubset,
 };
 
