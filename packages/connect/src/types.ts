@@ -5,7 +5,7 @@ export type TailwindSignOptions = {
   // defaults to direct
   readonly signMode?: "amino" | "direct";
   // funds required for tx you want to sign
-  readonly fundsRequired: Array<{
+  readonly fundsRequired?: Array<{
     readonly token: { denom: string; chain: string };
     readonly amount: string;
   }>;
