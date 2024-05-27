@@ -6,7 +6,7 @@ export type TailwindConnectorOptions = {}
 
 export function tailwindConnector(_: TailwindConnectorOptions = {}) {
   return createConnector(() => ({
-    icon: "https://tailwind.zone/brand/logo.svg",
+    icon: "https://tailwind.zone/brandkit/logo.svg",
     id: 'tailwindSDK',
     name: 'TAILWIND',
     supportsSimulation: false,
