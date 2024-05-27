@@ -57,8 +57,3 @@ export const connect = async (): Promise<TailwindWallet> => {
     document.addEventListener("readystatechange", documentStateChange);
   });
 };
-
-export const getTailwindEthereumProvider = async (): Promise<EthereumProvider> => {
-  const { ethereum } = await connect();
-  return ethereum;
-}
