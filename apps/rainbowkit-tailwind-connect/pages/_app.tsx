@@ -4,18 +4,14 @@ import type { AppProps } from 'next/app';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
-import {
-  arbitrum,
-  base,
-  mainnet,
-  optimism,
-  polygon,
-  sepolia,
-} from 'wagmi/chains';
-import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
-
-import { Wallet, getWalletConnectConnector } from '@rainbow-me/rainbowkit';
+import { getDefaultConfig, RainbowKitProvider} from '@rainbow-me/rainbowkit';
+import { Wallet } from '@rainbow-me/rainbowkit';
 import { tailwindConnector } from '@tailwindzone/connect-wagmi';
+import { seimainnet, seiatlantic2 } from "@tailwindzone/connect-wagmi/chains";
+import {
+  metaMaskWallet,
+  rainbowWallet,
+} from '@rainbow-me/rainbowkit/wallets';
 
 export interface MyWalletOptions {
   projectId: string;
@@ -64,18 +60,20 @@ const config = getDefaultConfig({
   appName: 'RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
   chains: [
-    mainnet,
-    polygon,
-    optimism,
-    arbitrum,
-    base,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [sepolia] : []),
+    // @ts-ignore
+    seimainnet,
+    seiatlantic2
   ],
   wallets: [{
     groupName: 'Popular',
-    wallets: [tailwindWallet]
+    wallets: [
+      tailwindWallet,
+      rainbowWallet,
+      metaMaskWallet
+    ]
   }],
   ssr: true,
+  showWallets: true,
 });
 
 const client = new QueryClient();
