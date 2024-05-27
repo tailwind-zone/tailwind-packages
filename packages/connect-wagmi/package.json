@@ -13,6 +13,7 @@
   "description": "Wagmi connect for TAILWIND wallet",
   "dependencies": {
     "@tailwindzone/connect": "^2.3.0",
+    "@wagmi/core": "^2.10.4",
     "viem": "^2.12.4"
   },
   "devDependencies": {
