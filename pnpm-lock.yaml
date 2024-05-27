@@ -19,10 +19,11 @@ importers:
         version: 1.12.5
 
   packages/connect:
-    devDependencies:
+    dependencies:
       '@keplr-wallet/types':
         specifier: ^0.12.63
         version: 0.12.72
+    devDependencies:
       '@types/long':
         specifier: 4.0.2
         version: 4.0.2
@@ -87,7 +88,7 @@ packages:
     resolution: {integrity: sha512-gDP+NCPa4seTT1xU9bkIKbMw7N/LPla9/4/amDLIGyFb6OEjfnFkRuReI/cZe/8aEvlkYAKnfB0UMipHobsn5g==}
     dependencies:
       long: 4.0.0
-    dev: true
+    dev: false
 
   /@noble/curves@1.2.0:
     resolution: {integrity: sha512-oYclrNgRaM9SsBUBVbb8M6DTV7ZHRTKugureoYEncY5c65HOmRzvSiTE3y5CYaPYJA/GVkrhXEoF0M3Ya9PMnw==}
@@ -1118,7 +1119,7 @@ packages:
 
   /long@4.0.0:
     resolution: {integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==}
-    dev: true
+    dev: false
 
   /loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
