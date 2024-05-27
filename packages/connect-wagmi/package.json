@@ -1,22 +1,25 @@
 {
   "name": "@tailwindzone/connect-wagmi",
   "version": "0.0.3",
-  "main": "dist/index.js",
-  "types": "dist.index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "import": "./dist/esm/index.js",
+      "default": "./dist/cjs/index.js"
     },
     "./chains": {
-      "types": "./dist/chains/index.d.ts",
-      "import": "./dist/chains/index.js",
-      "default": "./dist/chains/index.js"
+      "types": "./dist/cjs/chains/index.d.ts",
+      "import": "./dist/esm/chains/index.js",
+      "default": "./dist/cjs/chains/index.js"
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "pnpm run build:cjs && pnpm run build:esm",
+    "build:cjs": "pnpm tsc -p tsconfig.json --outDir dist/cjs --module commonjs",
+    "build:esm": "pnpm tsc -p tsconfig.json --outDir dist/esm --module es2022",
     "clean": "rm -rf dist && rm -rf node_modules",
     "preinstall": "npx only-allow pnpm"
   },
