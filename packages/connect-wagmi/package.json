@@ -1,0 +1,22 @@
+{
+  "name": "@tailwindzone/connect-wagmi",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist.index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist && rm -rf node_modules",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "author": "TAILWIND Labs, Inc.",
+  "license": "ISC",
+  "description": "Wagmi connect for TAILWIND wallet",
+  "dependencies": {
+    "@tailwindzone/connect": "^2.3.0",
+    "viem": "^2.12.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@8.15.1"
+}
