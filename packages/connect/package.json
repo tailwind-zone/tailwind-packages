@@ -1,6 +1,6 @@
 {
   "name": "@tailwindzone/connect",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "main": "dist/index.js",
   "types": "dist.index.d.ts",
   "scripts": {
@@ -11,8 +11,10 @@
   "author": "TAILWIND Labs, Inc.",
   "license": "ISC",
   "description": "Simple vanilla JS wallet connect for Tailwind wallet.",
+  "dependencies": {
+    "@keplr-wallet/types": "^0.12.63"
+  },
   "devDependencies": {
-    "@keplr-wallet/types": "^0.12.63",
     "@types/long": "4.0.2",
     "typescript": "^5.3.3"
   },

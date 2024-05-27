@@ -1,6 +1,6 @@
 
 import { OfflineAminoSigner, OfflineDirectSigner, TailwindSignOptions } from "./types";
-import { Keplr } from "@keplr-wallet/types";
+import type { Keplr } from "@keplr-wallet/types";
 
 export type TailwindOfflineSigner = OfflineAminoSigner & OfflineDirectSigner;  
 
