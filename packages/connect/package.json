@@ -8,7 +8,7 @@
     "clean": "rm -rf dist && rm -rf node_modules",
     "preinstall": "npx only-allow pnpm"
   },
-  "author": "baoskee",
+  "author": "TAILWIND Labs, Inc.",
   "license": "ISC",
   "description": "Simple vanilla JS wallet connect for Tailwind wallet.",
   "devDependencies": {
