@@ -4,6 +4,8 @@ import { Keplr } from "@keplr-wallet/types";
 
 export type TailwindOfflineSigner = OfflineAminoSigner & OfflineDirectSigner;  
 
+export type EthereumProvider = { request(...args: any): Promise<any> }
+
 export type TailwindKeplrSubset = Pick<
   Keplr,
   | "enable"
@@ -23,7 +25,8 @@ export type TailwindWallet = {
     options?: TailwindSignOptions
   ) => TailwindOfflineSigner,
   readonly keplr: TailwindKeplrSubset,
-};
+  readonly ethereum: EthereumProvider,
+} & EthereumProvider;
 
 type TailwindDecoratedWindow = {
   readonly tailwind: TailwindWallet;
@@ -54,3 +57,8 @@ export const connect = async (): Promise<TailwindWallet> => {
     document.addEventListener("readystatechange", documentStateChange);
   });
 };
+
+export const getTailwindEthereumProvider = async (): Promise<EthereumProvider> => {
+  const { ethereum } = await connect();
+  return ethereum;
+}
