@@ -1,0 +1,20 @@
+{
+  "name": "@tailwindzone/connect-rainbowkit",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist && rm -rf node_modules",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "author": "TAILWIND Labs, Inc.",
+  "license": "ISC",
+  "description": "Simple RainbowKit adapter for TAILWIND wallet.",
+  "dependencies": {
+  },
+  "packageManager": "pnpm@8.15.1",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

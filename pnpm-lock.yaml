@@ -224,6 +224,12 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
+  packages/connect-rainbowkit:
+    devDependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
   packages/connect-wagmi:
     dependencies:
       '@tailwindzone/connect':
