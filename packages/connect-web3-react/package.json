@@ -12,7 +12,7 @@
   "license": "ISC",
   "description": "Simple web3-react wallet connect for Tailwind wallet.",
   "dependencies": {
-    "@tailwindzone/connect": "^2.4.1",
+    "@tailwindzone/connect": "workspace:*",
     "@web3-react/core": "^8.2.3",
     "@web3-react/types": "^8.2.3"
   },
