@@ -11,9 +11,9 @@ import {
   metaMaskWallet,
   rainbowWallet,
 } from '@rainbow-me/rainbowkit/wallets';
-import { tailwindWallet } from '../tailwindWallet';
+import { tailwindWallet } from '@tailwindzone/connect-rainbowkit';
 
-export const seimainnet = defineChain({
+const seimainnet = defineChain({
   id: 1329,
   name: 'Sei Mainnet',
   nativeCurrency: { name: 'Sei', symbol: 'SEI', decimals: 18 },

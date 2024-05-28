@@ -23,6 +23,9 @@ importers:
       '@rainbow-me/rainbowkit':
         specifier: ^2.1.1
         version: 2.1.1(@tanstack/react-query@5.39.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)(viem@2.9.31)(wagmi@2.9.7)
+      '@tailwindzone/connect-rainbowkit':
+        specifier: workspace:^
+        version: link:../../packages/connect-rainbowkit
       '@tailwindzone/connect-wagmi':
         specifier: ^0.0.3
         version: 0.0.3(@types/react@18.3.3)(react@18.3.1)(typescript@5.4.2)
@@ -3326,7 +3329,7 @@ packages:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-i18next: 13.5.0(i18next@22.5.1)(react-dom@18.3.1)(react-native@0.74.1)(react@18.3.1)
-      react-native: 0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(react@18.3.1)
+      react-native: 0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(@types/react@18.3.3)(react@18.3.1)
     dev: false
 
   /@metamask/sdk@0.20.3(react-dom@18.3.1)(react-i18next@13.5.0)(react-native@0.74.1)(react@18.3.1):
@@ -4140,7 +4143,7 @@ packages:
     resolution: {integrity: sha512-jhCY95gRDE44qYawWVvhTjTplW1g+JtKTKM3f8xYT1dJtJ8QWv+gqEtKcfmOHfDkSDaMKG0AGBaDTSK8GXLH8Q==}
     dev: false
 
-  /@react-native/virtualized-lists@0.74.83(react-native@0.74.1)(react@18.3.1):
+  /@react-native/virtualized-lists@0.74.83(@types/react@18.3.3)(react-native@0.74.1)(react@18.3.1):
     resolution: {integrity: sha512-rmaLeE34rj7py4FxTod7iMTC7BAsm+HrGA8WxYmEJeyTV7WSaxAkosKoYBz8038mOiwnG9VwA/7FrB6bEQvn1A==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -4151,10 +4154,11 @@ packages:
       '@types/react':
         optional: true
     dependencies:
+      '@types/react': 18.3.3
       invariant: 2.2.4
       nullthrows: 1.1.1
       react: 18.3.1
-      react-native: 0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(react@18.3.1)
+      react-native: 0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(@types/react@18.3.3)(react@18.3.1)
     dev: false
 
   /@rnx-kit/chromium-edge-launcher@1.0.0:
@@ -11388,7 +11392,7 @@ packages:
       i18next: 22.5.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-native: 0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(react@18.3.1)
+      react-native: 0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(@types/react@18.3.3)(react@18.3.1)
     dev: false
 
   /react-is@16.13.1:
@@ -11411,10 +11415,10 @@ packages:
       escape-string-regexp: 2.0.0
       invariant: 2.2.4
       react: 18.3.1
-      react-native: 0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(react@18.3.1)
+      react-native: 0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(@types/react@18.3.3)(react@18.3.1)
     dev: false
 
-  /react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(react@18.3.1):
+  /react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6)(@types/react@18.3.3)(react@18.3.1):
     resolution: {integrity: sha512-0H2XpmghwOtfPpM2LKqHIN7gxy+7G/r1hwJHKLV6uoyXGC/gCojRtoo5NqyKrWpFC8cqyT6wTYCLuG7CxEKilg==}
     engines: {node: '>=18'}
     hasBin: true
@@ -11435,7 +11439,8 @@ packages:
       '@react-native/gradle-plugin': 0.74.83
       '@react-native/js-polyfills': 0.74.83
       '@react-native/normalize-colors': 0.74.83
-      '@react-native/virtualized-lists': 0.74.83(react-native@0.74.1)(react@18.3.1)
+      '@react-native/virtualized-lists': 0.74.83(@types/react@18.3.3)(react-native@0.74.1)(react@18.3.1)
+      '@types/react': 18.3.3
       abort-controller: 3.0.0
       anser: 1.4.10
       ansi-regex: 5.0.1
