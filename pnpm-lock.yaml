@@ -90,6 +90,8 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
+  packages/connect-web3-react: {}
+
 packages:
 
   /@adraffy/ens-normalize@1.10.0:
