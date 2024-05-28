@@ -1,7 +1,7 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { tailwindConnector } from './main'
+import { tailwindConnector } from '@tailwindzone/connect-web3-react'
 import { useWeb3React } from '@web3-react/core'
 
 function App() {

@@ -1,8 +1,8 @@
 {
   "name": "@tailwindzone/connect-web3-react",
-  "version": "2.4.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
-  "types": "dist.index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist && rm -rf node_modules",
@@ -12,9 +12,13 @@
   "license": "ISC",
   "description": "Simple web3-react wallet connect for Tailwind wallet.",
   "dependencies": {
-    "@tailwindzone/connect": "workspace:^2.3.0",
+    "@tailwindzone/connect": "workspace:^2.4.0",
     "@web3-react/core": "^8.2.3",
     "@web3-react/types": "^8.2.3"
   },
-  "packageManager": "pnpm@8.15.1"
+  "packageManager": "pnpm@8.15.1",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "typescript": "^5.4.5"
+  }
 }
