@@ -1,16 +1,38 @@
-import { getWalletConnectConnector } from "@rainbow-me/rainbowkit";
 import { Wallet } from '@rainbow-me/rainbowkit';
-
+import { createConnector } from 'wagmi';
+import { injected } from 'wagmi/connectors';
 import { tailwindConnector } from '@tailwindzone/connect-wagmi';
+import { CreateConnector } from '@rainbow-me/rainbowkit/dist/wallets/Wallet';
 
-export interface MyWalletOptions {
+function createInjectedConnector(provider?: any): CreateConnector {
+  return (walletDetails: any) => {
+    // Create the injected configuration object conditionally based on the provider.
+    const injectedConfig = provider
+      ? {
+          target: () => ({
+            id: walletDetails.rkDetails.id,
+            name: walletDetails.rkDetails.name,
+            provider,
+          }),
+        }
+      : {};
+
+    return createConnector((config) => ({
+      // Spread the injectedConfig object, which may be empty or contain the target function
+      ...injected(injectedConfig)(config),
+      ...walletDetails,
+    }));
+  };
+}
+
+export interface TailwindWalletOptions {
   projectId: string;
 }
 
-export const tailwindWallet = ({ projectId }: MyWalletOptions): Wallet => ({
+export const tailwindWallet = ({ projectId }: TailwindWalletOptions): Wallet => ({
   id: 'tailwind_wallet',
   name: 'TAILWIND',
-  iconUrl: 'https://tailwind.zone/brandkit/logo.svg',
+  iconUrl: "https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg",
   iconBackground: '#0c2f78',
   downloadUrls: {
     chrome: 'https://chromewebstore.google.com/detail/tailwind-wallet/dpnfollacokcbkeiidhplhjpafkbfacj',
@@ -43,5 +65,7 @@ export const tailwindWallet = ({ projectId }: MyWalletOptions): Wallet => ({
       ],
     },
   },
-  createConnector: tailwindConnector
+  createConnector: createInjectedConnector(
+    typeof window != "undefined" ? window.tailwind : undefined
+  )
 });

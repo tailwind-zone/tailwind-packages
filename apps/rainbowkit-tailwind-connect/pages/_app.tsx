@@ -5,18 +5,30 @@ import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
 import { getDefaultConfig, RainbowKitProvider} from '@rainbow-me/rainbowkit';
-import { seimainnet, seiatlantic2 } from "@tailwindzone/connect-wagmi/chains";
+import { seiatlantic2 } from "@tailwindzone/connect-wagmi/chains";
+import { defineChain } from "viem";
 import {
   metaMaskWallet,
   rainbowWallet,
 } from '@rainbow-me/rainbowkit/wallets';
 import { tailwindWallet } from '../tailwindWallet';
 
+export const seimainnet = defineChain({
+  id: 1329,
+  name: 'Sei Mainnet',
+  nativeCurrency: { name: 'Sei', symbol: 'SEI', decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ['https://evm-rpc.sei-apis.com'],
+    },
+  },
+})
+
 const config = getDefaultConfig({
   appName: 'RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
+  // @ts-expect-error 
   chains: [
-    // @ts-ignore
     seimainnet,
     seiatlantic2
   ],
