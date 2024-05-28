@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.1.1",
+    "@tailwindzone/connect-rainbowkit": "workspace:^",
     "@tailwindzone/connect-wagmi": "^0.0.3",
     "@tanstack/react-query": "^5.28.4",
     "next": "^14.2.3",
