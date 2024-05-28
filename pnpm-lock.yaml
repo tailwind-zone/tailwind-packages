@@ -145,7 +145,7 @@ importers:
   packages/connect-web3-react:
     dependencies:
       '@tailwindzone/connect':
-        specifier: ^2.4.0
+        specifier: ^2.4.1
         version: link:../connect
       '@web3-react/core':
         specifier: ^8.2.3
