@@ -1,7 +1,7 @@
 import { defineChain } from "viem"
 
 export const seimainnet = defineChain({
-  id: 531,
+  id: 1329,
   name: 'Sei Mainnet',
   nativeCurrency: { name: 'Sei', symbol: 'SEI', decimals: 18 },
   rpcUrls: {

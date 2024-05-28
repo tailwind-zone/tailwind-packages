@@ -9,7 +9,7 @@ const injected = injectedModule()
 const wallets = [injected, tailwind()]
 
 const seimainnet = {
-  id: 531,
+  id: 1329,
   token: "Sei",
   label: "Sei Mainnet",
   rpcUrl: "https://evm-rpc.sei-apis.com"
