@@ -4,7 +4,11 @@ import type { Keplr } from "@keplr-wallet/types";
 
 export type TailwindOfflineSigner = OfflineAminoSigner & OfflineDirectSigner;  
 
-export type EthereumProvider = { request(...args: any): Promise<any> }
+export type EthereumProvider = { 
+  request(...args: any): Promise<any>
+  on(eventName: string | symbol, listener: (...args: any[]) => void): EthereumProvider;
+  removeListener(eventName: string | symbol, listener: (...args: any[]) => void): EthereumProvider;
+}
 
 export type TailwindKeplrSubset = Pick<
   Keplr,
