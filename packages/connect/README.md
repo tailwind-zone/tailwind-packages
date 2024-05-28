@@ -20,19 +20,6 @@ You can use Tailwind with its own interface or existing Keplr-compatible interfa
 ```typescript
 import { connect } from "@tailwindzone/connect"
 
-export type TailwindSignOptions = {
-  // funds required for tx you want to sign
-  readonly fundsRequired?: Array<{
-    readonly token: { denom: string; chain: string };
-    readonly amount: string;
-  }>;
-  readonly dstChain: string;
-  // gas estimation for tx you want to sign
-  readonly maxGas?: number;
-  // defaults to direct
-  readonly signMode?: "amino" | "direct";
-};
-
 // because CosmJS is the standard for client-side   
 const wallet = await connect();
 const signer = wallet.getOfflineSigner("osmosis-1", {
