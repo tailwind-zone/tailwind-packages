@@ -7,13 +7,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "clean": "rm -rf dist && rm -rf node_modules",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindzone/connect": "^2.4.0",
+    "@tailwindzone/connect-web3-react": "workspace:^",
     "@web3-react/core": "^8.2.3",
     "@web3-react/metamask": "^8.2.4",
-    "@web3-react/types": "^8.2.3",
     "eventemitter3": "^5.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

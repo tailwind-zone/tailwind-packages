@@ -5,9 +5,8 @@ import './index.css'
 
 import { Web3ReactProvider, initializeConnector } from '@web3-react/core'
 import { MetaMask } from "@web3-react/metamask"
-import { TailwindConnector } from './tailwind.ts'
+import { tailwindConnector } from '@tailwindzone/connect-web3-react'
 
-export const tailwindConnector = initializeConnector(actions => new TailwindConnector({ actions }))
 export const metaMaskConnector = initializeConnector(actions => new MetaMask({ actions }))
 
 const connectors = [
