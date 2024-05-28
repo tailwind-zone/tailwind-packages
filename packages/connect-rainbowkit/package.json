@@ -12,6 +12,8 @@
   "license": "ISC",
   "description": "Simple RainbowKit adapter for TAILWIND wallet.",
   "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.1.1",
+    "wagmi": "^2.9.2"
   },
   "packageManager": "pnpm@8.15.1",
   "devDependencies": {
