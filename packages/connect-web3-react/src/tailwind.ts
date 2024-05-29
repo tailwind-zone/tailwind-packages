@@ -52,8 +52,11 @@ export class TailwindConnector extends Connector {
    */
   public async activate(chain_id_or_chain_params?: number | AddEthereumChainParameter): Promise<void> {
     const chainId = typeof chain_id_or_chain_params === 'number' ? chain_id_or_chain_params : chain_id_or_chain_params?.chainId
+    // no chainId provided, connect to the current chain in wallet state
     if (!chainId) {
-      throw new Error('No chainId provided')
+      const provider = await connect();
+      const res = await connectData(provider)
+      return this.actions.update(res)
     }
 
     try {
@@ -81,7 +84,7 @@ export class TailwindConnector extends Connector {
       });
 
       const revalidate = await connectData(provider)
-      if (revalidate.chainId !== chainId) 
+      if (revalidate.chainId !== chainId)
         throw new Error('Failed to switch chain')
 
       this.actions.update(revalidate)
