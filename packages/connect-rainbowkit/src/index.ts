@@ -42,8 +42,7 @@ export const tailwindWallet = (_: TailwindWalletOptions): Wallet => ({
     },
   },
   createConnector: createInjectedConnector(
-    // @ts-expect-error
-    typeof window != "undefined" ? window.tailwind : undefined
+    (window) => window?.tailwind
   )
 });
 
