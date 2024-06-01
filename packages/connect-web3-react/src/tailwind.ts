@@ -25,6 +25,15 @@ const connectData = async (tailwind: TailwindWallet): Promise<{
   }
 }
 
+const getProvider = async (): Promise<TailwindWallet> => {
+  try {
+    const provider = await connect()
+    return provider
+  } catch {
+    throw new Error("TAILWIND is not installed.")
+  }
+}
+
 export class TailwindConnector extends Connector {
   constructor({ actions, onError }: TailwindConnectorArgs) {
     super(actions, onError)
@@ -32,7 +41,7 @@ export class TailwindConnector extends Connector {
 
   public async connectEagerly(): Promise<void> {
     try {
-      const tailwind = await connect()
+      const tailwind = await getProvider()
       this.provider = tailwind;
 
       this.actions.update(await connectData(tailwind))
@@ -54,13 +63,13 @@ export class TailwindConnector extends Connector {
     const chainId = typeof chain_id_or_chain_params === 'number' ? chain_id_or_chain_params : chain_id_or_chain_params?.chainId
     // no chainId provided, connect to the current chain in wallet state
     if (!chainId) {
-      const provider = await connect();
+      const provider = await getProvider();
       const res = await connectData(provider)
       return this.actions.update(res)
     }
 
     try {
-      const provider = await connect();
+      const provider = await getProvider();
       this.provider = provider;
 
       const {
