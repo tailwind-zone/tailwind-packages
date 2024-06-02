@@ -1,10 +1,16 @@
 {
   "name": "@tailwindzone/connect",
-  "version": "2.4.2",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "2.4.3",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc",
+    "build": "pnpm run build:cjs && pnpm run build:esm",
+    "build:cjs": "pnpm tsc -p tsconfig.json --outDir dist/cjs --module commonjs",
+    "build:esm": "pnpm tsc -p tsconfig.json --outDir dist/esm --module es2022",
     "clean": "rm -rf dist && rm -rf node_modules",
     "preinstall": "npx only-allow pnpm"
   },
