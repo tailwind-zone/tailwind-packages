@@ -12,6 +12,9 @@ import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
+import { 
+  tailwindWallet 
+} from "@tailwindzone/connect-rainbowkit"
 import { defineChain } from 'viem';
 
 export const seimainnet = defineChain({
@@ -29,6 +32,12 @@ const config = getDefaultConfig({
   appName: 'My RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
   chains: [seimainnet],
+  wallets: [{
+    groupName: 'Popular',
+    wallets: [
+      tailwindWallet
+    ]
+  }],
   ssr: true, // If your dApp uses server side rendering (SSR)
 });
 
