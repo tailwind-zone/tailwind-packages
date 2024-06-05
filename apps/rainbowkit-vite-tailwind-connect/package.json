@@ -7,11 +7,12 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "clean": "rm -rf dist node_modules",
     "preview": "vite preview"
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.1.1",
-    "@tailwindzone/connect-rainbowkit": "workspace:^",
+    "@tailwindzone/connect-rainbowkit": "1.0.0",
     "@tanstack/react-query": "^5.28.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
