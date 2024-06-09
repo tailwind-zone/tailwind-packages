@@ -18,7 +18,7 @@ importers:
         specifier: ^1.10.13
         version: 1.12.5
 
-  apps/rainbowkit-tailwind-connect:
+  apps/rainbowkit-nextjs-tailwind-connect:
     dependencies:
       '@rainbow-me/rainbowkit':
         specifier: ^2.1.1
@@ -70,7 +70,7 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1(@tanstack/react-query@5.39.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)(viem@2.13.6)(wagmi@2.9.7)
       '@tailwindzone/connect-rainbowkit':
-        specifier: 1.0.0
+        specifier: workspace:*
         version: link:../../packages/connect-rainbowkit
       '@tanstack/react-query':
         specifier: ^5.28.4
@@ -4638,8 +4638,8 @@ packages:
     requiresBuild: true
     dependencies:
       '@tailwindzone/connect': 2.4.2
-      '@wagmi/core': 2.10.4(@types/react@18.3.3)(react@18.3.1)(typescript@5.4.2)(viem@2.12.4)
-      viem: 2.12.4(typescript@5.4.2)
+      '@wagmi/core': 2.10.4(@types/react@18.3.3)(react@18.3.1)(typescript@5.4.2)(viem@2.13.6)
+      viem: 2.13.6(typescript@5.4.2)
     transitivePeerDependencies:
       - '@tanstack/query-core'
       - '@types/react'
@@ -5383,7 +5383,7 @@ packages:
       - zod
     dev: false
 
-  /@wagmi/core@2.10.4(@types/react@18.3.3)(react@18.3.1)(typescript@5.4.2)(viem@2.12.4):
+  /@wagmi/core@2.10.4(@types/react@18.3.3)(react@18.3.1)(typescript@5.4.2)(viem@2.13.6):
     resolution: {integrity: sha512-X/PW4zckkSQ/y4LwkQ5cwLKv551I6kVorH3VsTQghxYt0Vj9K5/XhCCRQg5Q200u6fiUCJ+2WjpmhZu3XYNU9w==}
     peerDependencies:
       '@tanstack/query-core': '>=5.0.0'
@@ -5398,7 +5398,7 @@ packages:
       eventemitter3: 5.0.1
       mipd: 0.0.5(typescript@5.4.2)
       typescript: 5.4.2
-      viem: 2.12.4(typescript@5.4.2)
+      viem: 2.13.6(typescript@5.4.2)
       zustand: 4.4.1(@types/react@18.3.3)(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
@@ -7563,13 +7563,13 @@ packages:
     dependencies:
       get-intrinsic: 1.2.4
       has-tostringtag: 1.0.2
-      hasown: 2.0.1
+      hasown: 2.0.2
     dev: true
 
   /es-shim-unscopables@1.0.2:
     resolution: {integrity: sha512-J3yBRXCzDu4ULnQwxyToo/OjdMx6akgVC7K6few0a7F/0wLtmKKN7I73AH5T2836UuXRqN7Qg+IIUw/+YJksRw==}
     dependencies:
-      hasown: 2.0.1
+      hasown: 2.0.2
     dev: true
 
   /es-to-primitive@1.2.1:
@@ -7819,7 +7819,7 @@ packages:
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
       eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
-      hasown: 2.0.1
+      hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
       minimatch: 3.1.2
@@ -7851,7 +7851,7 @@ packages:
       emoji-regex: 9.2.2
       es-iterator-helpers: 1.0.19
       eslint: 8.57.0
-      hasown: 2.0.1
+      hasown: 2.0.2
       jsx-ast-utils: 3.3.5
       language-tags: 1.0.9
       minimatch: 3.1.2
@@ -8470,7 +8470,7 @@ packages:
       function-bind: 1.1.2
       has-proto: 1.0.3
       has-symbols: 1.0.3
-      hasown: 2.0.1
+      hasown: 2.0.2
 
   /get-nonce@1.0.1:
     resolution: {integrity: sha512-FJhYRoDaiatfEkUK8HKlicmu/3SGFD51q3itKDGoSTysQJBnfOcxU5GxnhE1E6soB76MbT0MBtnKJuXyAx+96Q==}
@@ -8710,7 +8710,6 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       function-bind: 1.1.2
-    dev: true
 
   /header-case@1.0.1:
     resolution: {integrity: sha512-i0q9mkOeSuhXw6bGgiQCCBgY/jlZuV/7dZXyZ9c6LcBrqwvT8eT719E9uxE5LiZftdl+z81Ugbg/VvXV4OJOeQ==}
@@ -8945,7 +8944,7 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       es-errors: 1.3.0
-      hasown: 2.0.1
+      hasown: 2.0.2
       side-channel: 1.0.6
     dev: true
 
@@ -13296,8 +13295,8 @@ packages:
       - zod
     dev: false
 
-  /viem@2.12.4(typescript@5.4.2):
-    resolution: {integrity: sha512-GUKztqyX7UW0rCrQurcIcuL3MV2PvM9AKvy0cV9lesPKYlbTPZibx4FbWQxjN5LuH+oZhl2YBF/2mU9vmpNw6g==}
+  /viem@2.13.6(typescript@5.4.2):
+    resolution: {integrity: sha512-BhvYhLrExC9P4AH9Gu/2A3VPUFkJT/ayH+A9anco2Ja/D0h3NStq+2uF4htcly1e68/U7IOrlCyX3Jz9zqeEJA==}
     peerDependencies:
       typescript: '>=5.0.4'
     peerDependenciesMeta:
